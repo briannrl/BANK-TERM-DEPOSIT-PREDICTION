@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prediction</title>
+        <style>
+            body {
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            .topnav {
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            .topnav a {
+              float: left;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+            }
+            
+            .topnav a:hover {
+              background-color: #ddd;
+              color: black;
+            }
+            
+            .topnav a.active {
+              background-color: #4CAF50;
+              color: white;
+            }
+
+            .container {
+                margin-left: 42%;
+            }
+
+            div.container input.submit {
+                margin-left: 10%;
+            }
+            </style>
+    </head>
+    <body background="https://www.desktopbackground.org/download/o/2013/09/01/632075_image-for-wallpapers-for-simple-grey-and-black-backgrounds_736x552_h.jpg">
+        <div class="topnav">
+            <a href=http://127.0.0.1:5000/>Home</a>
+            <a class="active" href=http://127.0.0.1:5000/predict>Prediction</a>
+            <a href=http://127.0.0.1:5000/last10data>Last 10 Data Entry</a>
+            <a href="http://127.0.0.1:5000/predicted_yes">Predicted Yes</a>
+          </div>
+        
+        <center>
+        <h1>PREDICTION OF TERM DEPOSIT SUBSCRIPTION OF BANK CLIENTS</h1><br>
+        </center>
+        
+        <div class="container">
+            <form method="POST", action="{{url_for('predicted')}}">
+                <b> Age             : <input type="text", name='age', placeholder="example: 29, 8, 13" required> <br><br>
+                                
+                    <label for="job">Job             : </label>
+                    <select id="job" name="job">
+                        <option value="blue-collar">blue-collar</option>
+                        <option value="management">management</option>
+                        <option value="technician">technician</option>
+                        <option value="admin.">admin.</option>
+                        <option value="services">services</option>
+                        <option value="retired">retired</option>
+                        <option value="self-employed">self-employed</option>
+                        <option value="entrepreneur">entrepreneur</option>
+                        <option value="unemployed">unemployed</option>
+                        <option value="housemaid">housemaid</option>
+                        <option value="student">student</option>
+                        <option value="unknown">unknown</option>
+                    </select> <br><br>
+                    
+                    <label for="marital">Marital         : </label>
+                    <select id="marital" name="marital">
+                        <option value="married">married</option>
+                        <option value="single">single</option>
+                        <option value="divorced">divorced</option>
+                    </select> <br><br>
+
+                    <label for="education">Education       : </label>
+                    <select id="education" name="education">
+                        <option value="primary">primary</option>
+                        <option value="secondary">secondary</option>
+                        <option value="tertiary">tertiary</option>
+                        <option value="unknown">unknown</option>
+                    </select> <br><br>
+                    
+                    <label for="default">Default         : </label>
+                    <select id="default" name="default">
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select> <br><br>
+                    
+                    Balance         : <input type="text", name='balance', placeholder="example: 200, 4350, 11782" required> <br><br>
+                    
+                    <label for="housing">Housing         : </label>
+                    <select id="housing" name="housing">
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select> <br><br>
+
+                    <label for="loan">Loan            : </label>
+                    <select id="loan" name="loan">
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select> <br><br>
+
+                    <label for="contact">Contact         : </label>
+                    <select id="contact" name="contact">
+                        <option value="cellular">cellular</option>
+                        <option value="telephone">telephone</option>
+                        <option value="unknown">unknown</option>
+                    </select> <br><br>
+
+                    Duration (Second)  : <input type="text", name='duration', placeholder="example: 2, 45, 180, 2455" required> <br><br> 
+                    Campaign (Day)  : <input type="text", name='campaign', placeholder="example: 21, 24323, 124" required> <br><br>
+                    Pdays (Day)     : <input type="text", name='pdays', placeholder="example: -1 for never contacted before, 232, 3281" required> <br><br>
+                    Previous (Day)  : <input type="text", name='previous', placeholder="example: 0, 2321, 134" required> <br><br><br> </b>
+                    <input class="submit", type="submit", value="Predict">
+                    
+            </form>
+        </div>
+        
+        <center>
+            <br><br>
+            <img src="static\telephone.jfif" alt="telephone">
+        </center>
+
+    </body>
+</html>
