@@ -20,7 +20,7 @@ model = joblib.load('logreg_model_final')
 sqldb = mysql.connector.connect(
     host= 'localhost',
     user= 'root',
-    password = '1a2d3g4j'
+    password = 'Briansql290196'
 )
 
 c = sqldb.cursor(buffered=True)

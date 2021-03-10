@@ -14,7 +14,8 @@ CREATE TABLE `customers`(
     `campaign` int(20),
     `pdays` int(20),
     `previous` int(20),
-    `time_inserted` datetime
+    `time_inserted` datetime,
+    `predicted` int(10)
     );
     
     
